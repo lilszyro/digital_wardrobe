@@ -3,7 +3,7 @@
 .styling-header a { color: var(--ink); font-size: .84rem; font-weight: 600; text-decoration: none; }
 .styling-header > div { text-align: center; }
 .styling-header .eyebrow { margin: 0 0 .8rem; }
-.styling-header h1 { color: #ed223a; font-size: clamp(2.4rem, 6vw, 5rem); white-space: nowrap; }
+.styling-header h1 { color: #557f98; font-size: clamp(2.4rem, 6vw, 5rem); white-space: nowrap; }
 .styling-header button { justify-self: end; border: 0; border-bottom: 1px solid; background: none; cursor: pointer; font: 600 .84rem "DM Sans", sans-serif; }
 .outfit-builder { width: min(100%, 35rem); margin: 1rem auto 0; padding: 1.5rem clamp(.5rem, 3vw, 2rem) 3rem; border: 1px solid rgb(47 33 26 / 20%); background: rgb(255 255 255 / 55%); }
 .builder-help { margin: 0 0 1.25rem; color: #74645a; font-size: .82rem; text-align: center; }
