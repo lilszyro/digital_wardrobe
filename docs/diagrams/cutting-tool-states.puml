@@ -1,0 +1,44 @@
+@startuml cutting_tool_states
+title Lasso Cutting Tool - Interaction States
+
+skinparam backgroundColor #EDF3F7
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontName Arial
+skinparam ArrowColor #4A3026
+skinparam state {
+  BackgroundColor #FFFFFF
+  BorderColor #6F96AD
+  FontColor #4A3026
+  StartColor #AA8065
+  EndColor #AA8065
+}
+
+[*] --> Editing : garment loaded
+Editing --> Tracing : choose Cut and begin lasso
+Tracing --> Tracing : add pointer path
+Tracing --> Previewing : close lasso
+Tracing --> Editing : cancel / invalid open path
+
+state Previewing {
+  [*] --> ShadingSelection
+  ShadingSelection : Shade area proposed for removal
+  ShadingSelection : Show pieces that will become disconnected
+}
+
+Previewing --> Editing : cancel
+Previewing --> CutApplied : apply cut
+CutApplied : Selected area removed
+CutApplied : Disconnected pieces remain
+CutApplied --> ArrangingPieces : select a disconnected piece
+ArrangingPieces --> ArrangingPieces : move or rotate piece
+ArrangingPieces --> CutApplied : finish arranging
+CutApplied --> Editing : continue designing
+CutApplied --> Editing : undo / restore pre-cut shape
+Editing --> [*] : leave or save design
+
+note right of Previewing
+  No destructive change occurs
+  before explicit confirmation.
+end note
+@enduml

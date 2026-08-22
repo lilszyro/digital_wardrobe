@@ -3,6 +3,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 
 
 def validate_diagram(file_path):
@@ -13,10 +14,8 @@ def validate_diagram(file_path):
     # Get absolute path of the file
     abs_file_path = os.path.abspath(file_path)
 
-    # Define temp directory within the skill folder
-    skill_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    temp_dir = os.path.join(skill_dir, "temp_render")
-    os.makedirs(temp_dir, exist_ok=True)
+    # Render outside the skill directory, which may be read-only.
+    temp_dir = tempfile.mkdtemp(prefix="plantuml_render_")
 
     try:
         # Run plantuml to generate png in the temp directory
@@ -47,9 +46,8 @@ def validate_diagram(file_path):
             return 1
 
         print(
-            f"Success: Diagram rendered successfully. Generated {
-                len(generated_files)
-            } image(s):"
+            "Success: Diagram rendered successfully. Generated "
+            f"{len(generated_files)} image(s):"
         )
         for f in generated_files:
             print(f" - {f}")
