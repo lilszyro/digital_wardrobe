@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="My Digital Wardrobe — browse clothes, accessories, and creative ideas."
+    />
+    <title>My Digital Wardrobe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow">Curated by you</div>
+        <h1 id="page-title">my digital <em>wardrobe</em></h1>
+        <p class="intro">Fashion made easy.</p>
+
+        <nav class="wardrobe-nav" aria-label="Wardrobe sections">
+          <button class="wardrobe-button clothes" type="button" data-panel="clothes-panel">
+            <span class="button-number">01</span>
+            <span class="button-label">my clothes</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="wardrobe-button accessories" type="button" data-panel="accessories-panel">
+            <span class="button-number">02</span>
+            <span class="button-label">my accessories</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="wardrobe-button creative" type="button" data-panel="creative-panel">
+            <span class="button-number">03</span>
+            <span class="button-label">creative corner</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </button>
+        </nav>
+      </section>
+
+      <section class="panel" id="clothes-panel" aria-live="polite" hidden>
+        <button class="close-button" type="button" aria-label="Close section">×</button>
+        <p class="panel-kicker">01 · The collection</p>
+        <h2>My clothes</h2>
+        <p>Your clothing collection will live here.</p>
+      </section>
+
+      <section class="panel" id="accessories-panel" aria-live="polite" hidden>
+        <button class="close-button" type="button" aria-label="Close section">×</button>
+        <p class="panel-kicker">02 · The finishing touches</p>
+        <h2>My accessories</h2>
+        <p>Your accessories collection will live here.</p>
+      </section>
+
+      <section class="panel" id="creative-panel" aria-live="polite" hidden>
+        <button class="close-button home-button" type="button">← Home</button>
+        <p class="panel-kicker">03 · Make it yours</p>
+        <h2>Creative corner</h2>
+        <p>Your outfit ideas and inspiration will live here.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

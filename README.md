@@ -1,3 +1,6 @@
-# description
+# My Digital Wardrobe
 
-making a website as a digital wardrobe
+A responsive digital wardrobe homepage with interactive sections for clothes,
+accessories, and outfit inspiration.
+
+Open `index.html` in a browser to view the site.

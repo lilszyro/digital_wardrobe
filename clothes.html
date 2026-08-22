@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Clothes · My Digital Wardrobe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="wardrobe.css" />
+  </head>
+  <body>
+    <main class="collection-page">
+      <header class="collection-header">
+        <a class="back-link" href="index.html">← Home</a>
+        <a class="style-link" href="mannequin.html">Style an outfit <span aria-hidden="true">↗</span></a>
+        <p class="eyebrow">The collection</p>
+        <h1>my clothes</h1>
+        <p class="collection-intro">Keep all your favourite pieces together and create a wardrobe that feels like you.</p>
+      </header>
+
+      <section class="upload-area" aria-labelledby="upload-title">
+        <div>
+          <p class="panel-kicker">Add something new</p>
+          <h2 id="upload-title">Upload your clothes</h2>
+        </div>
+        <div class="upload-actions">
+          <label for="clothing-category">Item type</label>
+          <select id="clothing-category">
+            <option value="tops">Top / T-shirt</option>
+            <option value="bottoms">Trousers / Bottoms</option>
+            <option value="shoes">Shoes</option>
+          </select>
+          <label class="upload-button" for="clothing-upload"><span aria-hidden="true">＋</span> Choose images</label>
+        </div>
+        <input id="clothing-upload" type="file" accept="image/*" multiple />
+      </section>
+
+      <section class="closet" aria-labelledby="closet-title">
+        <div class="closet-heading">
+          <h2 id="closet-title">Your wardrobe</h2>
+          <span id="item-count">0 pieces</span>
+        </div>
+        <div class="clothes-grid" id="clothes-grid"></div>
+        <div class="empty-state" id="empty-state">
+          <span aria-hidden="true">◇</span>
+          <p>Your wardrobe is waiting.</p>
+          <small>Upload a photo of your first piece to begin.</small>
+        </div>
+      </section>
+    </main>
+    <script src="wardrobe.js"></script>
+  </body>
+</html>

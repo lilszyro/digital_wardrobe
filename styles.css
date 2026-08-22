@@ -1,0 +1,208 @@
+:root {
+  --ink: #4a3026;
+  --cream: #edf3f7;
+  --sky: #a9c5d6;
+  --denim: #6f96ad;
+  --brown: #aa8065;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 10%, rgb(111 150 173 / 24%), transparent 28rem),
+    radial-gradient(circle at 90% 85%, rgb(170 128 101 / 22%), transparent 30rem),
+    var(--cream);
+  font-family: "DM Sans", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  content: "";
+  pointer-events: none;
+}
+
+main {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 3rem 1.25rem;
+}
+
+.hero {
+  width: min(100%, 68rem);
+  text-align: center;
+}
+
+.eyebrow,
+.panel-kicker {
+  margin-bottom: 1.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  margin: 0 0.8rem 0.25rem 0;
+  background: currentColor;
+  content: "";
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+h1 {
+  max-width: none;
+  font-size: clamp(2.35rem, 7vw, 6.5rem);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+h1 em {
+  color: #557f98;
+  font-weight: 600;
+}
+
+.intro {
+  margin: 1.5rem 0 3.5rem;
+  color: #645b55;
+  font-size: 1rem;
+}
+
+.wardrobe-nav {
+  display: grid;
+  grid-template-columns: minmax(18rem, 34rem);
+  justify-content: center;
+  gap: 1rem;
+}
+
+.wardrobe-button {
+  display: grid;
+  min-height: 7rem;
+  padding: 1.35rem;
+  border: 1px solid rgb(44 37 33 / 22%);
+  border-radius: 0;
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  grid-template-columns: 1fr auto;
+  text-align: left;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.wardrobe-button:hover,
+.wardrobe-button:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgb(44 37 33 / 12%);
+  outline: none;
+}
+
+.clothes:hover,
+.clothes:focus-visible { background: var(--sky); }
+.accessories:hover,
+.accessories:focus-visible { background: var(--denim); }
+.creative:hover,
+.creative:focus-visible { background: var(--brown); }
+
+.button-number {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+.button-label {
+  align-self: end;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+}
+
+.arrow {
+  font-size: 1.4rem;
+  transition: transform 180ms ease;
+}
+
+.wardrobe-button:hover .arrow,
+.wardrobe-button:focus-visible .arrow {
+  transform: rotate(45deg);
+}
+
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  padding: clamp(2rem, 8vw, 8rem);
+  background: var(--cream);
+  animation: reveal 280ms ease both;
+}
+
+.panel[hidden] { display: none; }
+
+.panel h2 {
+  max-width: 10ch;
+  font-size: clamp(4rem, 10vw, 9rem);
+}
+
+.panel > p:last-child {
+  margin-top: 2rem;
+  color: #645b55;
+}
+
+.close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+.home-button {
+  left: 2rem;
+  right: auto;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.home-button:hover { text-decoration: underline; }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(1rem); }
+}
+
+@media (max-width: 680px) {
+  main { align-items: start; padding-top: 4rem; }
+  .intro { margin-bottom: 2.5rem; }
+  h1 { font-size: clamp(2rem, 10vw, 4rem); }
+  .wardrobe-nav { grid-template-columns: minmax(0, 1fr); }
+  .wardrobe-button { min-height: 7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
