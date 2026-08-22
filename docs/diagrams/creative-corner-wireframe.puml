@@ -1,0 +1,44 @@
+@startsalt creative_corner_wireframe
+{
+  {+ My Digital Wardrobe | ^Creative Corner^ | My Clothes | My Accessories | My Designs | Account }
+  {#
+    {+
+      **CREATE**
+      --
+      [Choose garment shape]
+      [Colour]
+      [Material]
+      [Pattern]
+      --
+      **SHAPE TOOLS**
+      [Select]
+      [Lasso cut]
+      [Undo]
+    } |
+    {+
+      **DESIGN CANVAS**
+      .
+      .        +-------------------+
+      .        |                   |
+      .        |     GARMENT       |
+      .        |      PREVIEW      |
+      .        |                   |
+      .        +-------------------+
+      .
+      [ - Zoom ]  100%  [ + Zoom ]
+    } |
+    {+
+      **SELECTED PIECE**
+      --
+      Position:  x __  y __
+      Rotation:  <&refresh>  0 degrees
+      [Move]  [Rotate]
+      --
+      **CUT PREVIEW**
+      Selected area is shaded.
+      [Cancel]  [Apply cut]
+    }
+  }
+  {+ "Start with a shape, then make it yours." | [Preview design] | [Save to My Designs] }
+}
+@endsalt

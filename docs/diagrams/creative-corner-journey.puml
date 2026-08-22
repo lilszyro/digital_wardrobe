@@ -1,0 +1,48 @@
+@startuml creative_corner_journey
+title Creative Corner - First Complete User Journey
+
+skinparam backgroundColor #EDF3F7
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontName Arial
+skinparam ArrowColor #4A3026
+skinparam activity {
+  BackgroundColor #FFFFFF
+  BorderColor #6F96AD
+  DiamondBackgroundColor #F2DDD0
+  DiamondBorderColor #AA8065
+  FontColor #4A3026
+}
+
+start
+:Open Creative Corner;
+:Choose a pre-existing\ngarment shape;
+:Apply colour, visual material,\nor pattern;
+
+repeat
+  :Select the lasso cutting tool;
+  :Trace a closed freeform selection\nwith mouse or finger;
+  :Preview the selected area\nand affected pieces;
+  if (Happy with preview?) then (yes)
+    :Apply cut;
+    :Keep every disconnected\nGarment Piece on canvas;
+    :Move or rotate pieces\nif desired;
+  else (no)
+    :Cancel preview;
+  endif
+repeat while (Continue reshaping?) is (yes)
+-> no;
+
+:Review the complete\nVisual Design Concept;
+if (Happy with design?) then (yes)
+  :Save to My Designs;
+  stop
+else (no)
+  :Return to customisation;
+  note right
+    Undo restores an applied cut.
+    Freehand drawing is future scope.
+  end note
+  detach
+endif
+@enduml

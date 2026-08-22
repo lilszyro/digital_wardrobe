@@ -1,0 +1,53 @@
+@startuml website_map
+title Focused Website Map
+
+skinparam backgroundColor #EDF3F7
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam packageStyle rectangle
+skinparam defaultFontName Arial
+skinparam ArrowColor #4A3026
+skinparam rectangle {
+  BorderColor #6F96AD
+  BackgroundColor #FFFFFF
+  FontColor #4A3026
+}
+
+actor "New Designer" as Designer
+
+rectangle "Home\nUnderstand the website and choose a section" as Home #FFFFFF
+
+package "Focused website" #DCEAF2 {
+  rectangle "Creative Corner\nPRIMARY JOURNEY" as Creative #F2DDD0
+  rectangle "Choose garment shape" as Shapes
+  rectangle "Customise surface\ncolour / material / pattern" as Surface
+  rectangle "Reshape with lasso cut" as Cut
+  rectangle "Move and rotate\ndisconnected pieces" as Pieces
+  rectangle "Preview and save\nVisual Design Concept" as Save
+
+  rectangle "My Clothes\nwardrobe and outfit ideas" as Clothes #E3EEF4
+  rectangle "My Accessories\njewellery and bags" as Accessories #D3E2EA
+  rectangle "My Designs\nsaved visual concepts" as Designs #F6E9E1
+}
+
+package "Future possibilities - not current scope" #F3F3F3 {
+  rectangle "Freehand drawing" as Drawing #F8F8F8
+  rectangle "Construction guidance" as Guidance #F8F8F8
+  rectangle "Creator marketplace" as Market #F8F8F8
+}
+
+Designer --> Home
+Home --> Creative : primary action
+Home --> Clothes
+Home --> Accessories
+Creative --> Shapes
+Shapes --> Surface
+Surface --> Cut
+Cut --> Pieces
+Pieces --> Save
+Save --> Designs
+
+Creative ..> Drawing : later
+Save ..> Guidance : later
+Designs ..> Market : later
+@enduml
